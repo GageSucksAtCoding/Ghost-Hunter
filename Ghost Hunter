@@ -1,0 +1,19 @@
+import random
+
+guess_list = ["1", "2", "3"]
+
+Ghost_place = random.choice(guess_list)
+
+running = True
+while running:
+  print("Find The Location Of The Ghost")
+  guess = input("The ghost is behind one of 3 trees before you, which one is the ghost behind? (answer 1 2 or 3) >> ")
+  if guess + Ghost_place == "3":
+    print("You guessed correctly! '*' '*' 'G' (RESTART TO TRY AGAIN) ")
+  if guess + Ghost_place == "2":
+    print("You guessed correctly! '*' 'G' '*' (RESTART TO TRY AGAIN) ")
+  if guess + Ghost_place == "1":
+    print("You guessed correctly! 'G' '*' '*' (RESTART TO TRY AGAIN) ")
+  else:
+    print("Oh no! You guessed wrong and the ghost got you!")
+    running = True
